@@ -94,7 +94,7 @@ class Box(object):
           :type volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 2. Implement and test this function.
+        # DONE: 2. Implement and test this function.
         #     See the testing code (below) for more examples.
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -102,6 +102,15 @@ class Box(object):
         #    DIFFICULTY:      3
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+
+        if len(contents) > volume:
+            self.contents = []
+
+        else:
+            self.contents = contents
+            self.volume = volume
+
+
 
     def append_string(self, additional_contents):
         """
@@ -433,7 +442,7 @@ def run_test_init():
     print('-----------------------------------------------------------')
 
     # Test 1:  Contents fit in the Box easily.
-    box = Box('Good morning', 20)
+    box = Box('Good morning', 10)
     expected_contents = 'Good morning'
     expected_volume = 20
     print("Expected:", expected_contents, expected_volume)
