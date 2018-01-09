@@ -40,7 +40,7 @@ def main():
     ####################################################################
 
     run_test_init()
-#     run_test_append_string()
+    run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
 #     run_test_double_then_shrink()
@@ -166,6 +166,18 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and continue working on the problem.
         # --------------------------------------------------------------
+        seq = ''
+        if self.volume - (len(self.contents) + len(additional_contents)) < 0:
+            for k in range (self.volume - len(self.contents),
+                            len(additional_contents)):
+                seq = seq + additional_contents[k]
+            for k in range (0, self.volume - len(self.contents)):
+                self.contents = self.contents + additional_contents[k]
+            return seq
+        else:
+            self.contents = self.contents + additional_contents
+            additional_contents = ''
+            return additional_contents
 
     def double(self):
         """
