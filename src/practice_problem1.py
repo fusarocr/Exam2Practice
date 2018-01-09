@@ -39,7 +39,7 @@ def main():
     # UN-comment tests as you work the problems.
     ####################################################################
 
-#     run_test_init()
+    run_test_init()
 #     run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
@@ -102,13 +102,14 @@ class Box(object):
         #    DIFFICULTY:      3
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        self.volume = volume
 
         if len(contents) > volume:
-            self.contents = []
+            self.contents = ''
 
         else:
             self.contents = contents
-            self.volume = volume
+
 
 
 
@@ -442,7 +443,7 @@ def run_test_init():
     print('-----------------------------------------------------------')
 
     # Test 1:  Contents fit in the Box easily.
-    box = Box('Good morning', 10)
+    box = Box('Good morning', 20)
     expected_contents = 'Good morning'
     expected_volume = 20
     print("Expected:", expected_contents, expected_volume)
