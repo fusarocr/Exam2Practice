@@ -465,23 +465,29 @@ def practice_problem3d(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+        # DONE: 6. Just ABOVE this DONE, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
-    #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this DONE)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this DONE)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
-    #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    seq = practice_problem3c(sequence)
+    if len(seq) > 0:
+        return seq[0]
+    else:
+        return -1
 
 
 def run_test_practice_problem3e():
@@ -544,14 +550,20 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
-
+    sum = 0
+    for k in range(len(sequence)):
+        if k % 2 == 1:
+            sum = sum
+        else:
+            sum = sum + sequence[k]
+    return sum
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
